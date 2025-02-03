@@ -1,0 +1,27 @@
+# macOS system files
+.DS_Store
+
+# Xcode project workspace settings
+xcuserdata/
+xcshareddata/
+
+# Build & Derived Data
+DerivedData/
+build/
+*.xcworkspace
+
+# Swift Package Manager
+/.swiftpm/
+/Packages/
+/Package.resolved
+
+# Cocoapods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+
+# Environment and Secrets
+.env
+Secrets.swift

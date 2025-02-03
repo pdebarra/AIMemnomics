@@ -1,0 +1,40 @@
+1. Define Objectives
+    •    Create an app to help memorize numbers 00-99 using the Major System.
+    •    Implement flashcards for learning.
+    •    Include a quiz mode for recall testing.
+    •    Track user progress over time.
+    
+    
+2. Plan App Structure
+    •    ContentView: Main menu with navigation.
+    •    FlashcardView: Displays numbers with associated words/images.
+    •    QuizView: Tests recall with user input.
+    •    DataModel: Stores Major System words and images.
+    
+3. Set Up Navigation
+    •    Use NavigationView and NavigationLink for screen transitions.
+
+4. Implement Data Model
+    •    Store number-word associations in an array or database.
+
+5. Build Flashcards
+    •    Display number, word, and optional image.
+    •    Add a “reveal” button for checking answers.
+
+6. Build Quiz Mode
+    •    Show a number and let users input the correct word.
+    •    Provide feedback on correctness.
+
+7. Enhance Features
+    •    Add spaced repetition to focus on weak numbers.
+    •    Include visual/audio cues for better memory.
+
+8. Test and Refine
+    •    Test interactions and fix UI issues.
+    •    Optimize for performance and usability.
+
+
+ContentView (Main Menu)
+    ├── FlashcardView
+    ├── QuizView
+    ├── ProgressView (Optional)

@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct SettingsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @AppStorage("selectedDataset") private var selectedDataset = "numzi" // Default dataset
 
-#Preview {
-    SettingsView()
+    var body: some View {
+        Form {
+            Section(header: Text("Select Peg Word List")) {
+                Picker("Dataset", selection: $selectedDataset) {
+                    Text("Numzi").tag("numzi")
+                    Text("Alternative").tag("alternative")
+                }
+                .pickerStyle(SegmentedPickerStyle()) // You can also use .MenuPickerStyle()
+            }
+        }
+        .navigationTitle("Settings")
+    }
 }

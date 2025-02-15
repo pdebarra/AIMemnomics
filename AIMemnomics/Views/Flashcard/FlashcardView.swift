@@ -1,8 +1,14 @@
-import SwiftUI
+//
+//  FlashcardView.swift
+//  AIMemnomics
+//
+//  Created by Patrick Barry on 03/02/2025.
+//
 
 import SwiftUI
 
 struct FlashcardView: View {
+    @AppStorage("flashcardsReviewed") private var flashcardsReviewed = 0
     @AppStorage("selectedDataset") private var selectedDataset = "numzi" // Selected JSON file
     @State private var flashcards: [MajorSystemEntry] = []
     @State private var currentIndex = 0
@@ -40,8 +46,15 @@ struct FlashcardView: View {
                 .padding()
 
                 Button(action: {
+                    ProgressManager.checkDateChangeAndSaveProgress()
                     showWord = false
-                    currentIndex = Int.random(in: 0..<flashcards.count) // Randomly pick a new flashcard
+
+                    if !flashcards.isEmpty {
+                        currentIndex = Int.random(in: 0..<flashcards.count) // Randomly pick a new flashcard
+                        flashcardsReviewed += 1 // Track flashcard usage
+                    }
+                    
+                    ProgressManager.saveProgress()
                 }) {
                     Text("Next Flashcard")
                         .font(.headline)
@@ -55,9 +68,22 @@ struct FlashcardView: View {
         }
         .padding()
         .navigationTitle("Flashcards")
-        .onAppear {
-            flashcards = loadMajorSystemData(from: selectedDataset).shuffled() // Shuffle on load
-            currentIndex = Int.random(in: 0..<flashcards.count) // Start with a random index
+        .task {
+            loadFlashcards()
+            pickRandomFlashcard()
+        }
+        .onDisappear {
+            ProgressManager.saveProgress() // Auto-save when user leaves the screen
+        }
+    }
+
+    func loadFlashcards() {
+        flashcards = loadMajorSystemData(from: selectedDataset).shuffled()
+    }
+
+    func pickRandomFlashcard() {
+        if !flashcards.isEmpty {
+            currentIndex = Int.random(in: 0..<flashcards.count)
         }
     }
 }

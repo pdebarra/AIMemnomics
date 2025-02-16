@@ -36,7 +36,7 @@ struct HistoryView: View {
         }
         .navigationTitle("Progress History")
         .onAppear {
-            progressHistory = loadProgressHistory()
+            progressHistory = loadProgressHistory().sorted { $0.date > $1.date }
         }
     }
 

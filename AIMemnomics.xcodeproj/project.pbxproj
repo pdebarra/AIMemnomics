@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF9114EB2D516FB8006A01B2 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9114EA2D516FB8006A01B2 /* SpeechRecognizer.swift */; };
 		AF9114EF2D517C5E006A01B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9114EE2D517C5E006A01B2 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AF9114EA2D516FB8006A01B2 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		AF9114EE2D517C5E006A01B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFD1A2182D50FD6600DBB411 /* AIMemnomics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIMemnomics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD1A2282D50FD6800DBB411 /* AIMemnomicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIMemnomicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				AF9114EE2D517C5E006A01B2 /* ContentView.swift */,
-				AF9114EA2D516FB8006A01B2 /* SpeechRecognizer.swift */,
 				AFD1A21A2D50FD6600DBB411 /* AIMemnomics */,
 				AFD1A22B2D50FD6800DBB411 /* AIMemnomicsTests */,
 				AFD1A2352D50FD6800DBB411 /* AIMemnomicsUITests */,
@@ -246,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9114EF2D517C5E006A01B2 /* ContentView.swift in Sources */,
-				AF9114EB2D516FB8006A01B2 /* SpeechRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
